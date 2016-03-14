@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        priceDisplay(a);
+       order(a);
 
     }
 
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         int y = a += 1;
         quandisplay(y);
+        priceDisplay(y);
 
     }
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             a = 0;
         }
         quandisplay(y);
+        priceDisplay(y);
 
     }
 
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
     private void priceDisplay(int a) {
         TextView price = (TextView) findViewById(R.id.price);
         price.setText("NT$ " + String.valueOf(a * 10));
+    }
+
+    private void order(int a) {
+        TextView price = (TextView) findViewById(R.id.price);
+        price.setText("NT$ " + String.valueOf(a * 10)+"\nThank You!!");
     }
 
     private void quandisplay(int a) {
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public void ok(View view) {
         EditText et =(EditText)findViewById(R.id.keyin);
         String num = et.getText().toString();
-        int a = Integer.valueOf(num);
+        a = Integer.valueOf(num);
         quandisplay(a);
         priceDisplay(a);
 
