@@ -3,6 +3,7 @@ package com.example.student.black.lab02_1interactive;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     private void priceDisplay(int a) {
         TextView price = (TextView) findViewById(R.id.price);
         price.setText("NT$ " + String.valueOf(a * 10));
@@ -51,4 +53,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void ok(View view) {
+        EditText et =(EditText)findViewById(R.id.keyin);
+        String num = et.getText().toString();
+        int a = Integer.valueOf(num);
+        quandisplay(a);
+        priceDisplay(a);
+
+
+    }
 }
